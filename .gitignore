@@ -1,0 +1,4 @@
+nbproject/**/*
+productionOnly/**/*
+sqlShit/**/*
+dbScripts/dbConnect.php

@@ -1,0 +1,317 @@
+/* ESTRUTURA GERAL */
+html{
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+body {
+    margin: 0;
+    padding:0;
+    background-color: #ddd;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+}
+.pagina {
+    width: 100%
+}
+.barraSep{
+    min-height: 3px;
+    background-color: #fff;
+    width: auto;
+    margin-bottom: 5px;
+}
+/* TOPO DA PAGINA */
+.topContent {
+    width: 100%;
+    margin: 0 auto;
+}
+.topTop{
+    width: 100%;
+    margin: 0 auto;
+}
+.topStruct{
+    clear: both;
+    display: table;
+    margin: 0 auto;
+}
+.logo{
+    float: left;
+}
+.containerTopMid{
+    float: left;
+}
+.logCadLinks{
+    
+}
+.buscaTop{
+    
+}
+.containerTopRight{
+    float: left;
+}
+.contAtendLinks{
+    
+}
+/* MENU PRINCIPAL */
+.mainMenuDiv{
+    width: 100%;
+    margin: 0 auto;
+    background: #333;
+}
+.mainMenuStruct{
+    display: table;
+    margin: 0 auto;
+}
+.mainMenu{
+    height: 55px;
+    list-style:none;
+    border:none;
+    float:left;
+}
+.mainMenu li{
+    position:relative;
+    float:left;
+    top: -14px;
+    z-index: 2;
+}
+.mainMenu li ul{
+    position:absolute;
+    display:none;
+}
+.mainMenu li:hover ul, .mainMenu li.over ul{
+    display:block;
+}
+.mainMenu li ul li{
+    display:block;
+}
+.ulSubmenu{
+    top: 97px;
+    left: -150px;
+}
+/* FIX PARA O SUBMENU ARMAZENAMENTO, TODOS OS ITENS E PERFUMES */
+.ulSubmenuArm{
+    top: 97px;
+    left: -200px;
+}
+.ulSubmenuTod{
+    top: 97px;
+    left: -70px;
+}
+.ulSubmenuPer{
+    top: 97px;
+    left: -290px;
+}
+/*FIM DO FIX */
+/* SUBMENU GERAL */
+.liSubmenu{
+    width: 0px;
+    left: -50px;
+    top: -90px;
+}
+p{
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+.mainMenu p.smTitle{
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-indent: 5px;
+}
+.mainMenu p.links{
+    text-indent: 15px;
+}
+.mainMenu a{
+    color: #fff;
+    text-decoration: none;
+}
+.mainMenu a:hover{
+    text-decoration: underline;
+}
+.submenuItens{
+    min-width: 200px;
+    float: left;
+    background: #333;
+    padding: 0px 10px 0px 10px;
+}
+.submenuBanner{
+    background: #333;
+    height: 407px;
+    padding: 0px;
+}
+.mainSubmenu{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU TODOS OS ITENS */
+.smTodosItens{
+    width: 535px;
+    background: #333;
+}
+/* SUBMENU INFORMÁTICA */
+.smInformatica{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU CELULARES */
+.smCelulares{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU JOGOS E CONSOLES */
+.smJogosConsoles{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU TABELTS */
+.smTablets{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU AUTOMOTIVOS */
+.smAutomotivos{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU ELETRÔNICOS */
+.smEletronicos{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU ACESSÓRIOS */
+.smAcessorios{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU PERFUMARIA */
+.smPerfumaria{
+    width: 525px;
+    background: #333;
+}
+/* SUBMENU ARMAZENAMENTO */
+.smArmazenamento{
+    width: 535px;
+    background: #333;
+}
+
+/* ESTRUTURA DO RODAPÉ */
+.botContent{
+    clear: both;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #333;
+}
+.botStruct{
+    padding: 5px 0 5px 0;
+    margin: 0 auto;
+    display: table;
+    color: #fff;
+}
+p.rodape{
+    margin: 0.2em;
+}
+p.rodape a{
+    text-decoration: none;
+    color: #fff;
+}
+p.rodape a:hover{
+    text-decoration: underline;
+}
+.botP1{
+    float: left;
+    padding: 5px;
+}
+.botP2{
+    float: left;
+    padding: 5px;
+}
+.botP3{
+    float: left;
+    padding: 5px;
+}
+.botP3_1{
+}
+.botP3_2{
+}
+.botP4{
+    float: left;
+    padding: 5px;
+}
+.botEnd{
+    text-align: center;
+    clear: both;
+    padding: 0 5px 0 5px;
+}
+/* ESTRUTURA DAS PAGINAS DOS PRODUTOS */
+div.midStruct{
+    display: table;
+    margin: auto;
+    background-color: #fff;
+}
+div.midProdUpper{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.midProdUL{
+    
+    float: left;
+}
+div.midprodFotos{
+    
+}
+div.midprodVideo{
+    
+}
+div.midProdUR{
+    
+    float: left;
+    padding-top: 10px;
+}
+div.midBuyProd{
+
+    min-width: 500px;
+}
+div.midProdInfo{
+    padding: 10px;
+}
+div.midProdSpec{
+    
+}
+div.midFreteBar{
+    clear: both;
+    text-align: center;
+}
+div.midProdBot{
+    text-align: center;
+}
+div.fotosSmall{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul.parcelamento{
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+    position: absolute;
+    z-index: 1;
+}
+ul.parcelamento ul li{
+    display: none;
+    
+}
+ul.parcelamento:hover ul li{
+    display: table;
+}
+ul.parcelas li{
+    background-color: lightsteelblue;
+    position: relative;
+    padding: 2px 4px;
+    left: 200px;
+    top: -17px;
+}
+.prodInfoTest1{display: none;}
+.ProdInfoTest2:focus ~ .prodInfoTest1{display: inline;}
+.ProdInfoTest2:focus{display: none;}
+.ProdInfoTest2:focus ~ #list{display: none;}
