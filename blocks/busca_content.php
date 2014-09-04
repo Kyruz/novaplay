@@ -15,19 +15,24 @@
     </div>
     <div>
         <form method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php">
-            <div style="float: left;">Palavras Chave: <input type="text" name="wordSet" id="wordSet" style="width: 300px;"/></div> 
+            <div style="float: left;">Palavras Chave: <input type="text" name="wordsString" id="wordSet" style="width: 300px;"/></div> 
             <div style="float: left; position: relative; top: -6px; left: 5px;">
-                <div><input type="radio" name="wordHandle" id="algumaP" value="alguma" checked><label for="algumaP">Qualquer destas palavras</label></div>
-                <div><input type="radio" name="wordHandle" id="todasP" value="todas"><label for="todasP">Todas essas palavras</label></div>
+                <div><input type="radio" name="searchtype" id="qdp" value="qdp" checked><label for="qdp">Qualquer destas palavras</label></div>
+                <div><input type="radio" name="wordHandle" id="tep" value="tep"><label for="tep">Todas essas palavras</label></div>
             </div>
             <div>
                 Procurar por: 
-                <input type="radio" name="searchBy" id="NT" value="NT" checked><label for="NT">Nomes e Tags</label>
-                <input type="radio" name="searchBy" id="N" value="N"><label for="N">Somente Nomes</label>
-                <input type="radio" name="searchBy" id="T" value="T"><label for="T">Somente Tags</label>
+                <input type="checkbox" name="srchCol[]" id="srchCol_NP" value="nome_prod"/><label for="srchCol_NP">Nome</label>
+                <input type="checkbox" name="srchCol[]" id="srchCol_T" value="tags"/><label for="srchCol_T">Tags</label>
+                <input type="checkbox" name="srchCol[]" id="srchCol_P" value="produtor"/><label for="srchCol_P">Fabricante</label>
+                <input type="checkbox" name="srchCol[]" id="srchCol_D" value="descricao"/><label for="srchCol_D">Descrição</label>
             </div>
             <div>
                 <p>
+                    <!--
+                        Preparar um javaScript ou jQuery para manter oculto as opções de categorias, e exibi-las somente
+                        se o usuário escolher a opção de especificar em quais categorias ele quer realizar a busca.
+                    -->
                     Procurar nas Categorias: 
                     <input type="radio" name="categHandle" id="categHandleT" value="todas" checked><label for="categHandleT">Todas</label>
                     <input type="radio" name="categHandle" id="categHandleE" value="espec"><label for="categHandleE">Especificar</label>

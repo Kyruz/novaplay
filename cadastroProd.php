@@ -371,14 +371,14 @@
                                                 echo"<input type='checkbox' name='tags[]' value='xbox one'>Xbox One";
                                             }
                                             if(in_array("ps3",$tagArray)){
-                                                echo"<input type='checkbox' checked name='tags[]' value='ps3 playstation 3'>PS3";
+                                                echo"<input type='checkbox' checked name='tags[]' value='play ps3 playstation 3'>PS3";
                                             }else{
-                                                echo"<input type='checkbox' name='tags[]' value='ps3 playsation 3'>PS3";
+                                                echo"<input type='checkbox' name='tags[]' value='play ps3 playsation 3'>PS3";
                                             }
                                             if(in_array("ps4",$tagArray)){
-                                                echo"<input type='checkbox' checked name='tags[]' value='ps4 playstation 4'>PS4";
+                                                echo"<input type='checkbox' checked name='tags[]' value='play ps4 playstation 4'>PS4";
                                             }else{
-                                                echo"<input type='checkbox' name='tags[]' value='ps4 playstation 4'>PS4";
+                                                echo"<input type='checkbox' name='tags[]' value='play ps4 playstation 4'>PS4";
                                             }
                                             if(in_array("pc",$tagArray)){
                                                 echo"<input type='checkbox' checked name='tags[]' value='pc desktop computador'>PC";

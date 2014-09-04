@@ -18,7 +18,7 @@
         }
         return $idSet;
     }
-    
+
     function fullSearch($connection, $wordHandle, $searchBy, $categHandle, $wordSet, $categCodes = NULL){
         $idSet = array();
         if($wordHandle == "alguma"){
@@ -145,7 +145,7 @@
                 }
             }
             */
-            
+    
             $idSet = array();
             for($i = 0; $i < count($wordSet); $i++){
                 $tagResult = mysqli_query($connection, "SELECT * FROM produto WHERE tags LIKE ('%".$wordSet[$i]."%') ORDER BY nome_prod");
@@ -161,7 +161,7 @@
                     }
                 }
             }
-            
+    
             //VOCÊ ESTÁ AQUI LUCAS----------------------------------------------
             
             for($e = 0; $e < count($idSet); $e++){
