@@ -1,31 +1,21 @@
-<script>
-    function checkBoxById(id){
-        var status = document.getElementById(id).checked;
-        if(status === false){
-            document.getElementById(id).checked = true;
-        }else{
-            document.getElementById(id).checked = false;
-        }
-    }
-</script>
 <div style="display: table; margin: auto;">
     <div>
         <p>Pesquisa Avançada</p>
         
     </div>
     <div>
-        <form method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php">
+        <form name="search" method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php" onsubmit="return validadeForm()">
             <div style="float: left;">Palavras Chave: <input type="text" name="wordsString" id="wordSet" style="width: 300px;"/></div> 
             <div style="float: left; position: relative; top: -6px; left: 5px;">
-                <div><input type="radio" name="searchtype" id="qdp" value="qdp" checked><label for="qdp">Qualquer destas palavras</label></div>
-                <div><input type="radio" name="wordHandle" id="tep" value="tep"><label for="tep">Todas essas palavras</label></div>
+                <div><input type="radio" name="searchType" id="qdp" value="qdp" checked><label for="qdp">Qualquer destas palavras</label></div>
+                <div><input type="radio" name="searchType" id="tep" value="tep"><label for="tep">Todas essas palavras</label></div>
             </div>
             <div>
                 Procurar por: 
-                <input type="checkbox" name="srchCol[]" id="srchCol_NP" value="nome_prod"/><label for="srchCol_NP">Nome</label>
-                <input type="checkbox" name="srchCol[]" id="srchCol_T" value="tags"/><label for="srchCol_T">Tags</label>
-                <input type="checkbox" name="srchCol[]" id="srchCol_P" value="produtor"/><label for="srchCol_P">Fabricante</label>
-                <input type="checkbox" name="srchCol[]" id="srchCol_D" value="descricao"/><label for="srchCol_D">Descrição</label>
+                <input type="checkbox" name="searchCol[]" id="srchCol_NP" value="nome_prod" checked/><label for="srchCol_NP">Nome</label>
+                <input type="checkbox" name="searchCol[]" id="srchCol_T" value="tags" checked/><label for="srchCol_T">Tags</label>
+                <input type="checkbox" name="searchCol[]" id="srchCol_P" value="produtor"/><label for="srchCol_P">Fabricante</label>
+                <input type="checkbox" name="searchCol[]" id="srchCol_D" value="descricao" /><label for="srchCol_D">Descrição</label>
             </div>
             <div>
                 <p>
@@ -34,11 +24,11 @@
                         se o usuário escolher a opção de especificar em quais categorias ele quer realizar a busca.
                     -->
                     Procurar nas Categorias: 
-                    <input type="radio" name="categHandle" id="categHandleT" value="todas" checked><label for="categHandleT">Todas</label>
+                    <input type="radio" name="categHandle" id="categHandleT" value="todas" checked onclick="catListhide()"><label for="categHandleT">Todas</label>
                     <input type="radio" name="categHandle" id="categHandleE" value="espec"><label for="categHandleE">Especificar</label>
                 </p>
             </div>
-            <div>
+            <div id="checkBoxes">
                 <table>
                     <tr>
                         <td>
@@ -163,9 +153,34 @@
                     </tr>
                 </table>
             </div>
+            <div>
+                <input type="submit" value="Buscar"/>
+            </div>
         </form>
     </div>
     <br>
+    <script>
+        document.getElementById('checkBoxes').style.display = "none";
+        
+        document.getElementById('categHandleE').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "block"})
+        document.getElementById('categHandleT').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "none"})
+        
+        function validadeForm(){
+            words = document.forms['search']['wordsString'].value;
+            searchType = document.forms['search']['searchType'].value;
+            searchCols = document.forms['search']['searchCol'].value;
+            catHandle = document.forms['search']['categHandle'].value;
+            codCatList = document.forms['search']['codCategoria'].value;
+            
+            if((words == null || words == "") || (searchCols == null || searchCols == "")){
+                alert("Não há pálavras chaves para realizar a busca ou nenhum campo onde procurar foi marcado.");
+                return false;
+            }
+            
+            document.getElementById('tests').innerHTML = words + searchType + searchCols + catHandle + codCatList;
+            
+        }
+    </script>
     <?php
         
         include 'dbScripts/dbConnect.php';
@@ -182,24 +197,35 @@
             }
         }
         
-        if(isset($_SESSION['mainInfo'])){
-            echo $_SESSION['mainInfo'];
+        if(isset($_SESSION['idArray'])){
+            $idSet = $_SESSION['idArray'];
+            $ids = "";
+            for($i = 0; $i < (count($idSet) - 1); $i++){
+                $ids = $ids.$idSet[$i].", ";
+            }
+            $count = count($idSet) - 1;
+            $ids = $ids.$idSet[$count].")";
+            $sqlQuery = "SELECT * FROM produto WHERE id_produto IN (".$ids;
+            $result = mysqli_query($dbCon, $sqlQuery);
+            echo"<table><tr><td>Nome do Produto</td><td>Fabricante</td><td>Tags</td><tr>";
+            while($row = mysqli_fetch_array($result)){
+                echo"<tr><td>".$row['nome_prod']."</td><td>".$row['produtor']."</td><td>".$row['tags']."</td><tr>";
+            }
+            echo"</table><br>";
         }
-        if(isset($_SESSION['mainInfo1'])){
-            echo $_SESSION['mainInfo1'];
-        }
-        if(isset($_SESSION['mainInfo2'])){
-            echo $_SESSION['mainInfo2'];
-        }
-        if(isset($_SESSION['mainInfo3'])){
-            echo $_SESSION['mainInfo3'];
-        }
-        if(isset($_SESSION['mainInfo4'])){
-            echo $_SESSION['mainInfo4'];
+        
+        if(isset($_SESSION['mysqlQuery'])){
+            $pordutos = $_SESSION['mysqlQuery'];
+            echo"<table><tr><td>Nome do Produto</td><td>Fabricante</td><td>Tags</td><tr>";
+            while($row = mysqli_fetch_array($pordutos)){
+                echo"<tr><td>".$row['nome_prod']."</td><td>".$row['produtor']."</td><td>".$row['tags']."</td><tr>";
+            }
+            echo"</table><br>";
         }
         
     ?>
     <br>
+    <p id="tests"></p>
     <a href="sessionDestroy.php">Destruir sessão.</a>
 </div>
 <span style="clear: right;"></span>
