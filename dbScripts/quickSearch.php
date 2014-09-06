@@ -11,7 +11,7 @@
         $words = mb_strtolower($words,'utf-8');
         $wordSet = explode(' ',$words);
         $result = searchComplete($dbCon, $wordSet);
-        $_SESSION['searchResult'] = $result;
+        $_SESSION['idArray'] = $result;
     }
     
     $_SESSION["words"] = $words;

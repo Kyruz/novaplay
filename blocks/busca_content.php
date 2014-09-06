@@ -4,25 +4,27 @@
         
     </div>
     <div>
-        <form name="search" method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php" onsubmit="return validadeForm()">
+        <form name="search" method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php" onsubmit="return validateForm()">
             <div style="float: left;">Palavras Chave: <input type="text" name="wordsString" id="wordSet" style="width: 300px;"/></div> 
             <div style="float: left; position: relative; top: -6px; left: 5px;">
                 <div><input type="radio" name="searchType" id="qdp" value="qdp" checked><label for="qdp">Qualquer destas palavras</label></div>
                 <div><input type="radio" name="searchType" id="tep" value="tep"><label for="tep">Todas essas palavras</label></div>
             </div>
-            <div>
+            
+            <!-- Tivemos um erro semântigo no script da busca.
+            Até termos tempo para desenvolver uma nova solução para esta parte do sistema,
+            não usaremos esta parte do código. U.U -->
+            <div style="display: none;">
                 Procurar por: 
                 <input type="checkbox" name="searchCol[]" id="srchCol_NP" value="nome_prod" checked/><label for="srchCol_NP">Nome</label>
                 <input type="checkbox" name="searchCol[]" id="srchCol_T" value="tags" checked/><label for="srchCol_T">Tags</label>
                 <input type="checkbox" name="searchCol[]" id="srchCol_P" value="produtor"/><label for="srchCol_P">Fabricante</label>
                 <input type="checkbox" name="searchCol[]" id="srchCol_D" value="descricao" /><label for="srchCol_D">Descrição</label>
             </div>
+            <!-- Depois daqui, ta normal. -->
+            
             <div>
                 <p>
-                    <!--
-                        Preparar um javaScript ou jQuery para manter oculto as opções de categorias, e exibi-las somente
-                        se o usuário escolher a opção de especificar em quais categorias ele quer realizar a busca.
-                    -->
                     Procurar nas Categorias: 
                     <input type="radio" name="categHandle" id="categHandleT" value="todas" checked onclick="catListhide()"><label for="categHandleT">Todas</label>
                     <input type="radio" name="categHandle" id="categHandleE" value="espec"><label for="categHandleE">Especificar</label>
@@ -159,30 +161,8 @@
         </form>
     </div>
     <br>
-    <script>
-        document.getElementById('checkBoxes').style.display = "none";
-        
-        document.getElementById('categHandleE').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "block"})
-        document.getElementById('categHandleT').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "none"})
-        
-        function validadeForm(){
-            words = document.forms['search']['wordsString'].value;
-            searchType = document.forms['search']['searchType'].value;
-            searchCols = document.forms['search']['searchCol'].value;
-            catHandle = document.forms['search']['categHandle'].value;
-            codCatList = document.forms['search']['codCategoria'].value;
-            
-            if((words == null || words == "") || (searchCols == null || searchCols == "")){
-                alert("Não há pálavras chaves para realizar a busca ou nenhum campo onde procurar foi marcado.");
-                return false;
-            }
-            
-            document.getElementById('tests').innerHTML = words + searchType + searchCols + catHandle + codCatList;
-            
-        }
-    </script>
     <?php
-        
+
         include 'dbScripts/dbConnect.php';
         include 'dbScripts/dbDisconect.php';
         
@@ -213,19 +193,14 @@
             }
             echo"</table><br>";
         }
-        
-        if(isset($_SESSION['mysqlQuery'])){
-            $pordutos = $_SESSION['mysqlQuery'];
-            echo"<table><tr><td>Nome do Produto</td><td>Fabricante</td><td>Tags</td><tr>";
-            while($row = mysqli_fetch_array($pordutos)){
-                echo"<tr><td>".$row['nome_prod']."</td><td>".$row['produtor']."</td><td>".$row['tags']."</td><tr>";
-            }
-            echo"</table><br>";
-        }
-        
     ?>
     <br>
     <p id="tests"></p>
     <a href="sessionDestroy.php">Destruir sessão.</a>
 </div>
 <span style="clear: right;"></span>
+<script>
+    document.getElementById('checkBoxes').style.display = "none";
+    document.getElementById('categHandleE').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "block"})
+    document.getElementById('categHandleT').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "none"})
+</script>
