@@ -4,8 +4,11 @@
         
     </div>
     <div>
-        <form name="search" method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php" onsubmit="return validateForm()">
-            <div style="float: left;">Palavras Chave: <input type="text" name="wordsString" id="wordSet" style="width: 300px;"/></div> 
+        <form name="search" method="post" enctype="multipart/form-data" action="dbScripts/advSearch.php" onsubmit="return validateValue('wordSet', 'warn01')">
+            <div style="float: left;">
+                Palavras Chave: <input type="text" name="wordsString" id="wordSet" style="width: 300px;"/><br>
+                <samp style="color: red;" id="warn01"></samp>
+            </div>
             <div style="float: left; position: relative; top: -6px; left: 5px;">
                 <div><input type="radio" name="searchType" id="qdp" value="qdp" checked><label for="qdp">Qualquer destas palavras</label></div>
                 <div><input type="radio" name="searchType" id="tep" value="tep"><label for="tep">Todas essas palavras</label></div>
@@ -23,7 +26,7 @@
             </div>
             <!-- Depois daqui, ta normal. -->
             
-            <div>
+            <div style="clear: both;">
                 <p>
                     Procurar nas Categorias: 
                     <input type="radio" name="categHandle" id="categHandleT" value="todas" checked onclick="catListhide()"><label for="categHandleT">Todas</label>
@@ -159,6 +162,7 @@
                 <input type="submit" value="Buscar"/>
             </div>
         </form>
+        <button name="testKeywords" onclick="validateKeywords()">Validar Keywords</button>
     </div>
     <br>
     <?php
@@ -203,4 +207,5 @@
     document.getElementById('checkBoxes').style.display = "none";
     document.getElementById('categHandleE').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "block"})
     document.getElementById('categHandleT').addEventListener("click", function(){document.getElementById("checkBoxes").style.display = "none"})
+    var fieldToValidate = ["wordsString", ];
 </script>

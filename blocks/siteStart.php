@@ -16,6 +16,8 @@
         <link rel="shortcut icon" href="media/img/favicon.png" />
         <!-- CSS principal do site -->
         <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+        <!-- JavaScript personal Function Library -->
+        <script src="generalScripts/funLib.js"></script>
         <!-- JavaScript que amplia as fotos na pagina de cada produto -->
         <script src="js-global/FancyZoom.js"></script>
         <script src="js-global/FancyZoomHTML.js"></script>
