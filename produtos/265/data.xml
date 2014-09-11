@@ -1,1 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?><produto><id>265</id><categoria>Jogos</categoria><cover>sniperEliteCover.jpeg</cover><img1>sniper1.jpg</img1><img2>sniper2.jpg</img2><img3>sniper3.jpg</img3><videoURL>//www.youtube.com/embed/nsHcLZGQ81s</videoURL></produto>
+<?xml version="1.0"?>
+<produto>
+	<id>265</id>
+	<nome>Sniper Elite 3</nome>
+	<categoria>Jogos</categoria>
+	<cover>sniperEliteCover.jpeg</cover>
+	<img1>sniper1.jpg</img1>
+	<img2>sniper2.jpg</img2>
+	<img3>sniper3.jpg</img3>
+	<videoURL>//www.youtube.com/embed/nsHcLZGQ81s</videoURL>
+</produto>

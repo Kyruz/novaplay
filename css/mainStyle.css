@@ -311,7 +311,77 @@ ul.parcelas li{
     left: 200px;
     top: -17px;
 }
-.prodInfoTest1{display: none;}
-.ProdInfoTest2:focus ~ .prodInfoTest1{display: inline;}
-.ProdInfoTest2:focus{display: none;}
-.ProdInfoTest2:focus ~ #list{display: none;}
+
+/* Clase usada nas barras separadores de conteúdo por todo o site */
+div.genericBar{
+    clear: both;
+    background: rgb(30, 50, 230);
+    background: -moz-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: -webkit-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: -o-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: -ms-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: linear-gradient(179deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    border: 2px solid #4141FF;
+}
+
+/* Classe dos blocos pequenos onde fica o link e a foto pequena da capa de cada produto nas buscas */
+div.prodSmallBlock{
+    margin: 10px;
+    float: left;
+    width: 130px;
+    min-height: 100px;
+    background-color: #DEDEF7;
+    text-align: center;
+    padding: 10px 5px 5px 5px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+/* Estrutura que faz os botões das subcategorias das paginas das categorias principais */
+.subCatBtnBar {
+	-moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #80b5ea) );
+	background:-moz-linear-gradient( center top, #bddbfa 5%, #80b5ea 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddbfa', endColorstr='#80b5ea');
+	background-color:#bddbfa;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:25px;
+	line-height:25px;
+	width:250px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #528ecc;
+}
+.subCatBtnBar:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #80b5ea), color-stop(1, #bddbfa) );
+	background:-moz-linear-gradient( center top, #80b5ea 5%, #bddbfa 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80b5ea', endColorstr='#bddbfa');
+	background-color:#80b5ea;
+}.subCatBtnBar:active {
+	position:relative;
+	top:1px;
+}
+

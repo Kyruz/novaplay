@@ -1,5 +1,6 @@
 <?php
     include 'dbScripts/dbConnect.php';
+    include 'dbScripts/dbDisconect.php';
 ?>
 <style>
     #divContent{
@@ -12,17 +13,13 @@
         -moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 1);
         box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 1);
     }
-    #leftMenuTitle{
-        margin-top: 0px;
-        line-height: 0px;
-        color: rgb(255, 255, 255);
-        background-color: #1B1BC3;
+    div.leftMenuTitle{
+        display: table;
+        margin: 10px auto 10px auto;
+        color: #fff;
+        font-weight: bold;
         font-size: 24px;
-        padding: 20px;
-        text-shadow: -1px 0px 2px rgba(170, 170, 170, 0.8);
-        -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);
-        -moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 1);
-        box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 1);
+        text-shadow: 1px 1px 2px rgba(50, 50, 50, 1);
     }
     #divLeftMenu{
         float: left;
@@ -34,13 +31,6 @@
         float: left;
         height: 350px;
     }
-    h3{
-        color: #fff;
-        background-image: url("images-global/acordBtn.png");
-        background-repeat: no-repeat;
-        padding: 5.5px;
-        text-shadow: 1px 1px 2px rgba(70, 70, 70, 0.75);
-    }
     p{
         text-indent: 20px;
     }
@@ -48,23 +38,25 @@
 <div>
     <div id="divContent">
         <div id="divLeftMenu">
-            <h2 id="leftMenuTitle">Jogos e Consoles</h2>
+            <a href="jogosConsoles.php?subCat=jogosCons" style="text-decoration: none;">
+                <div class="genericBar" style="width: 250px; margin: 0 5px 10px 0;"><div class="leftMenuTitle">Jogos e Consoles</div></div>
+            </a>
             <div id="accordion">
-                <h3>Consoles e Acessórios</h3>
+                <a href="#" class="subCatBtnBar">Consoles e Acessórios</a>
                 <div>
-                    <p>Playstation 4</p>
-                    <p>Playstation 3</p>
-                    <p>Xbox One</p>
-                    <p>Xbox 360</p>
+                    <p><a href="jogosConsoles.php?subCat=consAcesPS4">Playstation 4</a></p>
+                    <p><a href="jogosConsoles.php?subCat=consAcesPS3">Playstation 3</a></p>
+                    <p><a href="jogosConsoles.php?subCat=consAcesXboxOne">Xbox One</a></p>
+                    <p><a href="jogosConsoles.php?subCat=consAcesXbox360">Xbox 360</a></p>
                 </div>
-                <h3>Jogos</h3>
+                <a href="#" class="subCatBtnBar">Jogos</a>
                 <div>
-                    <p>Playstation 4</p>
-                    <p>Playstation 3</p>
-                    <p>Xbox One</p>
-                    <p>Xbox 360</p>
+                    <p><a href="jogosConsoles.php?subCat=jogosPS4">Playstation 4</a></p>
+                    <p><a href="jogosConsoles.php?subCat=jogosPS3">Playstation 3</a></p>
+                    <p><a href="jogosConsoles.php?subCat=jogosXboxOne">Xbox One</a></p>
+                    <p><a href="jogosConsoles.php?subCat=jogosXbox360">Xbox 360</a></p>
                 </div>
-                <h3>Outros Consoles</h3>
+                <a href="#" class="subCatBtnBar">Outros Consoles</a>
                 <div>
                     <p>Nintendo Wii U</p>
                     <p>Playstation 2</p>
@@ -84,8 +76,15 @@
                 </div>
             </div>
         </div>
-        <div style="clear: both;">
-            Aqui vem a consulta SQL.
+        <div class="genericBar" style="height: 20px;"></div>
+        <div>
+            <?php 
+            if(isset($_GET['subCat'])){
+                include 'dbScripts/preDefSearch/'.$_GET['subCat'].'.php';
+            }else{
+                include 'dbScripts/preDefSearch/jogosCons.php';
+            }
+            ?>
         </div>
     </div>
 </div>

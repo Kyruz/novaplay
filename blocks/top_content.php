@@ -14,6 +14,7 @@ subcategoria. Isso dará maior precisão e controle à navegação do usuário.
                 <div>
                     <a href="cadastroProd.php" style="color: black;">AdmTemp</a>
                     <a href="engineBusca.php" style="color: black;">Engine de busca</a>
+                    <a href="experimentos.php" style="color: black">Exp.</a>
                 </div>
             </div>
             <div style="height: 240px; float: right;">

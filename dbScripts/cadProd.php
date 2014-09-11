@@ -86,19 +86,18 @@
             saveFile($_FILES['img1'], $prodId);
             saveFile($_FILES['img2'], $prodId);
             saveFile($_FILES['img3'], $prodId);
-            //move_uploaded_file($_FILES['cover']['tmp_name'], "../produtos/".$prodId."/media/b_".$_FILES['cover']['name']);
             
-            makeXml($prodId, $categoria, $_FILES['cover']['name'], $_FILES['img1']['name'], $_FILES['img2']['name'], $_FILES['img3']['name'], $_POST['videoURL']);
+            makeXml($prodId, $nome, $categoria, $_FILES['cover']['name'], $_FILES['img1']['name'], $_FILES['img2']['name'], $_FILES['img3']['name'], $_POST['videoURL']);
             
             dbDisconect($dbCon);
-            header('Location: http://localhost/playstart_2/cadastroProd.php?message=1');
+            header('Location: http://localhost/novaplay/cadastroProd.php?message=1');
         }else{
             dbDisconect($dbCon);
-            header('Location: http://localhost/playstart_2/cadastroProd.php?message=3');
+            header('Location: http://localhost/novaplay/cadastroProd.php?message=3');
         }
     }else{
         dbDisconect($dbCon);
-        header('Location: http://localhost/playstart_2/cadastroProd.php?message=2&nome='.$nome.'&codigo='.$codigo.'&preco='.$preco.'&categoria='.$categoria.'&produtor='.$produtor.'&quantidade='.$quantidade.'&tags='.$tagsArray.'&tags_outras='.$tags_outras.'&detalhes='.$detalhes.'&nomeErr='.$nomeErr.'&codigoErr='.$codigoErr.'&precoErr='.$precoErr.'&categoriaErr='.$categoriaErr.'&produtorErr='.$produtorErr.'&quantidadeErr='.$quantidadeErr.'&tagsErr='.$tagsErr.'&tagList='.$tagsList.'&desc_blt='.$desc_blt);
+        header('Location: http://localhost/novaplay/cadastroProd.php?message=2&nome='.$nome.'&codigo='.$codigo.'&preco='.$preco.'&categoria='.$categoria.'&produtor='.$produtor.'&quantidade='.$quantidade.'&tags='.$tagsArray.'&tags_outras='.$tags_outras.'&detalhes='.$detalhes.'&nomeErr='.$nomeErr.'&codigoErr='.$codigoErr.'&precoErr='.$precoErr.'&categoriaErr='.$categoriaErr.'&produtorErr='.$produtorErr.'&quantidadeErr='.$quantidadeErr.'&tagsErr='.$tagsErr.'&tagList='.$tagsList.'&desc_blt='.$desc_blt);
     }
     
     function test_input($data){
@@ -178,7 +177,11 @@
         fclose($prodPage);
     }
     
-    function makeXml($prod_id, $Code, $cover, $img1, $img2, $img3, $videoURL){
+    function makeXml($prod_id, $nome, $Code, $cover, $img1, $img2, $img3, $videoURL){
+        /* PREPARA O NOME A SER INSERIDO NO XML */
+        $nome = ucwords($nome);
+        
+        /* PREPARA LINK DO VIDEO DO YOUTUBE */
         if(stristr($videoURL, "youtube.com") != false){
             if(stristr($videoURL,"https:") != false){
                 $videoURL = substr($videoURL, 6);
@@ -194,7 +197,7 @@
         }else{
             return 2;
         }
-        //$catCode = (int)$Code;
+        
         switch ($Code){
             case 5 :
                 $catName = "Celular / Smartphone";
@@ -298,7 +301,7 @@
             default:
                 $catName = "Undentified";
         }
-        $xmlCont = "<?xml version='1.0' encoding='utf-8'?><produto><id>".$prod_id."</id><categoria>".$catName."</categoria><cover>".$cover."</cover><img1>".$img1."</img1><img2>".$img2."</img2><img3>".$img3."</img3><videoURL>".$readyURL."</videoURL></produto>";
+        $xmlCont = "<?xml version='1.0' encoding='utf-8'?><produto><id>".$prod_id."</id><nome>".$nome."</nome><categoria>".$catName."</categoria><cover>".$cover."</cover><img1>".$img1."</img1><img2>".$img2."</img2><img3>".$img3."</img3><videoURL>".$readyURL."</videoURL></produto>";
         if($xmlFile = fopen("../produtos/".$prod_id."/data.xml", 'w')){
             $retVal = 0;
         }else{

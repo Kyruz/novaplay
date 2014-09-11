@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-------------------------------------------------
 |Desenvolvido por Lucas Carvalho Flores           |
-|Contao: (49) 9818 1022 eclipsekyruz@gmail.com    |
+|Contato: (49) 9818 1022 eclipsekyruz@gmail.com    |
 --------------------------------------------------
 |Developed by Lucas Carvalho Flores               |
 |Contact: +55 49 9818 1022 eclipsekyruz@gmail.com |
