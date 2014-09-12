@@ -10,6 +10,9 @@ body {
     font-family: arial, helvetica, sans-serif;
     font-size: 14px;
 }
+a{
+    text-decoration: none;
+}
 .pagina {
     width: 100%
 }
@@ -19,6 +22,7 @@ body {
     width: auto;
     margin-bottom: 5px;
 }
+
 /* TOPO DA PAGINA */
 .topContent {
     width: 100%;
@@ -51,6 +55,7 @@ body {
 .contAtendLinks{
     
 }
+
 /* MENU PRINCIPAL */
 .mainMenuDiv{
     width: 100%;
@@ -87,6 +92,7 @@ body {
     top: 97px;
     left: -150px;
 }
+
 /* FIX PARA O SUBMENU ARMAZENAMENTO, TODOS OS ITENS E PERFUMES */
 .ulSubmenuArm{
     top: 97px;
@@ -100,7 +106,7 @@ body {
     top: 97px;
     left: -290px;
 }
-/*FIM DO FIX */
+
 /* SUBMENU GERAL */
 .liSubmenu{
     width: 0px;
@@ -142,51 +148,61 @@ p{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU TODOS OS ITENS */
 .smTodosItens{
     width: 535px;
     background: #333;
 }
+
 /* SUBMENU INFORMÁTICA */
 .smInformatica{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU CELULARES */
 .smCelulares{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU JOGOS E CONSOLES */
 .smJogosConsoles{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU TABELTS */
 .smTablets{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU AUTOMOTIVOS */
 .smAutomotivos{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU ELETRÔNICOS */
 .smEletronicos{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU ACESSÓRIOS */
 .smAcessorios{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU PERFUMARIA */
 .smPerfumaria{
     width: 525px;
     background: #333;
 }
+
 /* SUBMENU ARMAZENAMENTO */
 .smArmazenamento{
     width: 535px;
@@ -241,6 +257,7 @@ p.rodape a:hover{
     clear: both;
     padding: 0 5px 0 5px;
 }
+
 /* ESTRUTURA DAS PAGINAS DOS PRODUTOS */
 div.midStruct{
     display: table;
@@ -324,9 +341,49 @@ div.genericBar{
     border: 2px solid #4141FF;
 }
 
+/* Objetos que montam as paginas das catgorias maiores */
+ #divContent{
+    display: table;
+    margin: 10px auto 10px auto;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 1);
+    -moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 1);
+    box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 1);
+}
+div.leftMenuTitle{
+    display: table;
+    margin: 10px auto 10px auto;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(50, 50, 50, 1);
+}
+#divLeftMenu{
+    float: left;
+    width: 250px;
+    height: 350px;
+    padding-right: 10px;
+}
+#divSlides{
+    float: left;
+    height: 350px;
+}
+p.subCatLink{
+    margin: 0;
+    padding-left: 20px;
+    text-decoration: none;
+    color: black;
+    line-height: 25px;
+}
+p.subCatLink:hover{
+    background-color: #E2E7F8;
+}
+
 /* Classe dos blocos pequenos onde fica o link e a foto pequena da capa de cada produto nas buscas */
 div.prodSmallBlock{
-    margin: 10px;
+    margin: 9px;
     float: left;
     width: 130px;
     min-height: 100px;
