@@ -2,7 +2,7 @@
 $query = "SELECT id_produto, nome_prod, produtor, preco, qtd_estoque FROM produto WHERE cod_categoria in (14, 6) ORDER BY cod_categoria, nome_prod";
 if($result = mysqli_query($dbCon, $query)){
     $rowCount = 0;
-    echo'<table class="prodList">';
+    echo'<table>';
     while($row = mysqli_fetch_array($result)){
         $prodXml = simplexml_load_file('produtos/'.$row['id_produto'].'/data.xml');
         if($rowCount == 0){

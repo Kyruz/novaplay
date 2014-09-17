@@ -8,6 +8,7 @@
 -------------------------------------------------->
 <?php
     session_start();
+    include 'dbScripts/funLib.php';
 ?>
 <html>
     <head>

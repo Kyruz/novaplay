@@ -49,12 +49,17 @@
         </div>
         <div class="genericBar" style="height: 20px;"></div>
         <div class="topBox">
-            <?php 
+            <?php
+            
+            
+            
+            /*
             if(isset($_GET['subCat'])){
                 include 'dbScripts/preDefSearch/'.$_GET['subCat'].'.php';
             }else{
                 include 'dbScripts/preDefSearch/jogosCons.php';
             }
+            */
             ?>
         </div>
     </div>

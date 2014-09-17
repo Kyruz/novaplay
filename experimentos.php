@@ -28,37 +28,17 @@
                 </div>
             <div class="genericBar" style="height: 20px; margin: 5px 0 5px 0;"></div>
             <div>
-                <table>
-                    <tr>
-                        <td  class="prodTD" style="background-color: green;">
-                            <div class="prodSmallBlock" style="display: table-cell; vertical-align: middle;">
-                                <div style="display: table; margin: auto; background-color: blue;">
-                                    <img src="produtos/270/media/s_cover.jpg"><br>
-                                    Playstation 4
-                                </div>
-                            </div>
-                        </td>
-                        <td  class="prodTD">
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td  class="prodTD">
-                            
-                        </td>
-                        <td  class="prodTD">
-                            
-                        </td>
-                    </tr>
-                </table>
+                <?php
+                echo $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'id_produto > 0', 'cod_categoria, nome_prod');
+                echo '<br>';
+                runQuery($dbCon, $newQuery, 'prodArray', ["id_produto", "nome_prod", "preco"]);
+                $_SESSION['prodListIndex'] = listNextProds($_SESSION['prodArray'], 0, 30, ["id_produto", "nome_prod", "preco"]);
+                ?>
             </div>
-                <div>
-                    <?php 
-                    if(isset($_GET['subCat'])){
-                        include 'dbScripts/preDefSearch/'.$_GET['subCat'].'.php';
-                    }
-                    ?>
-                </div>
+            <div>
+                <a href="">Anterior</a>
+                <a href="">Próximo</a>
+            </div>
             </div>
             <?php
                 include 'blocks/bot_content.php';
