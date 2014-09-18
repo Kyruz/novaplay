@@ -13,7 +13,7 @@
         <div class="topBox">
             <div style="display: table; margin: auto;">
                 <div id="divLeftMenu">
-                    <a href="jogosConsoles.php?subCat=jogosCons" style="text-decoration: none;">
+                    <a href="jogosConsoles.php?unsetPA=1&listProds=0" style="text-decoration: none;">
                         <div class="genericBar" style="width: 250px; margin: 0 5px 10px 0;"><div class="leftMenuTitle">Jogos e Consoles</div></div>
                     </a>
                     <div id="accordion">
@@ -57,52 +57,54 @@
         <div class="topBox">
             <?php
             /* Aqui checa-se qual produtos devem ser buscados no sistema, e gera-se
-             * a query adequada para tal.
+             * a query adequada para tal. Para cada caso, usamos um include para buscar
+             * o script que gera a query. O motivo, é para reutilização da mesma query
+             * em diversas partes do site.
              */
             if(isset($_GET['listProds'])){
                 switch (intval($_GET['listProds'])){
                     case 1:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 6 AND tags LIKE ("%4%") AND tags LIKE ("%playstation%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryConAcesPS4.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 2:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 6 AND tags LIKE ("%3%") AND tags LIKE ("%playstation%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryConAcesPS3.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 3:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 6 AND tags LIKE ("%xbox%") AND tags LIKE ("%one%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryConAcesXboxOne.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 4:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 6 AND tags LIKE ("%xbox%") AND tags LIKE ("%360%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryConAcesXbox360.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 5:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 14 AND tags LIKE ("%4%") AND tags LIKE ("%playstation%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryJogosPS4.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 6:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 14 AND tags LIKE ("%3%") AND tags LIKE ("%playstation%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryJogosPS3.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 7:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 14 AND tags LIKE ("%xbox%") AND tags LIKE ("%one%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryJogosXboxOne.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 8:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 14 AND tags LIKE ("%xbox%") AND tags LIKE ("%360%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryJogosXbox360.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 9:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria IN (6, 14) AND tags LIKE ("%nintendo%") AND tags LIKE ("%wii%") AND tags LIKE ("%u%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryNintendoWiiU.php';
                         unset($_SESSION['prodArray']);
                         break;
                     case 10:
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria IN (6, 14) AND tags LIKE ("%2%") AND tags LIKE ("%playstation%")', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryTudoPS2.php';
                         unset($_SESSION['prodArray']);
                         break;
                     default :
-                        $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria IN (6, 14)', 'cod_categoria, nome_prod');
+                        include 'dbScripts/preDefSearch/mkQueryConAcesAll.php';
                         unset($_SESSION['prodArray']);
                 }
             }else{
