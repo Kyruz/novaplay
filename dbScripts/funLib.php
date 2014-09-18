@@ -6,11 +6,13 @@
  * $condition é uma string que descreve a condição a ser aceita para a linha ser retornada.
  * $orderBy é opcionar. Deve ser uma string com o ordenamento a ser feito no resultado.
  */
-function mkQuery($tables, $whatToSelect, $condition, $orderBy = false){
+function mkQuery($tables, $whatToSelect, $condition = false, $orderBy = false){
+    $query = "SELECT ".$whatToSelect." FROM ".$tables;
+    if($condition != false){
+        $query = $query." WHERE ".$condition;
+    }
     if($orderBy != false){
-        $query = "SELECT ".$whatToSelect." FROM ".$tables." WHERE ".$condition." ORDER BY ".$orderBy;
-    }else{
-        $query = "SELECT ".$whatToSelect." FROM ".$tables." WHERE ".$condition;
+        $query = $query." ORDER BY ".$orderBy;
     }
     return $query;
 }

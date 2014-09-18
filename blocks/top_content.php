@@ -38,7 +38,7 @@ subcategoria. Isso dará maior precisão e controle à navegação do usuário.
     <div class="mainMenuDiv">
         <div class="mainMenuStruct">
             <ul class="mainMenu">
-                <li><a href="#"><img src="media/img/btnTodosItensOff.png"></a>
+                <li><a href="todosOsItens.php?unsetPA=1"><img src="media/img/btnTodosItensOff.png"></a>
                     <ul class="ulSubmenuTod">
                         <li class="liSubmenu">
                             <?php
