@@ -1,4 +1,8 @@
         </div>
+        <?php
+        include 'dbScripts/dbDisconect.php';
+        dbDisconect($dbCon);
+        ?>
         <script>
             function resizeTop(){
                 leftDiv = document.getElementById("topBackgroundL");

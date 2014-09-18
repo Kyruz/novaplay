@@ -65,7 +65,7 @@ subcategoria. Isso dará maior precisão e controle à navegação do usuário.
                         </li>
                     </ul>
                 </li>
-                <li><a href="jogosConsoles.php"><img src="media/img/btnJogosConsolesOff.png"></a>
+                <li><a href="jogosConsoles.php?unsetPA=1"><img src="media/img/btnJogosConsolesOff.png"></a>
                     <ul class="ulSubmenu">
                         <li class="liSubmenu">
                             <?php

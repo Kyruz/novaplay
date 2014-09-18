@@ -2,6 +2,12 @@
                 include 'blocks/siteStart.php';
                 include 'dbScripts/dbConnect.php';
                 include 'blocks/top_content.php';
+                if(isset($_GET['unsetPA'])){
+                    if($_GET['unsetPA'] == 1){
+                        unset($_SESSION['prodArray']);
+                        unset($_GET['unsetPA']);
+                    }
+                }
             ?>
             
             <!-- Div com donteúdo -->
@@ -32,12 +38,20 @@
                 echo $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'id_produto > 0', 'cod_categoria, nome_prod');
                 echo '<br>';
                 runQuery($dbCon, $newQuery, 'prodArray', ["id_produto", "nome_prod", "preco"]);
-                $_SESSION['prodListIndex'] = listNextProds($_SESSION['prodArray'], 0, 30, ["id_produto", "nome_prod", "preco"]);
+                if(isset($_GET['pgCount'])){
+                    $_SESSION['prodListIndex'] = listNextProds($_SESSION['prodArray'], $_GET['pgCount'], 30, ["id_produto", "nome_prod", "preco"]);
+                }else{
+                    $_SESSION['prodListIndex'] = listNextProds($_SESSION['prodArray'], 0, 30, ["id_produto", "nome_prod", "preco"]);
+                }
+                
                 ?>
             </div>
-            <div>
-                <a href="">Anterior</a>
-                <a href="">Próximo</a>
+            <div style="display: table; margin: auto;">
+                <?php
+                if(isset($_SESSION['prodArray'])){
+                    mkNavLinks(count($_SESSION['prodArray']), 30);
+                } 
+                ?>
             </div>
             </div>
             <?php

@@ -49,7 +49,7 @@
         <div class="barraSep" style="clear: both;"></div>
         <div class="botEnd">
             <p class="rodape">
-                Av. Fernando Machado, 1135-D, Centro - Chapecó - SAC: (49) 3323-3204
+                Av. Fernando Machado, 1135-D, Centro - Chapecó - SAC: (49) 3322-3204
                 <br>
                 Copyright ® Novaplay - Todos os Direitos Reservados - Preços podem ser alterados sem prévio aviso
                 <br>

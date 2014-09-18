@@ -15,13 +15,13 @@ function mkQuery($tables, $whatToSelect, $condition, $orderBy = false){
     return $query;
 }
 
-/*A função runQuery() executa uma query, gera uma array assossiativa com os resultados e a armazena numa variável de $_SESSION.
+/* A função runQuery() executa uma query, gera uma array assossiativa com os resultados e a armazena numa variável de $_SESSION.
  * $dbCon deve ser um link com um banco de dados válido.
  * $query deve ser uma string contendo a query a ser executada.
  * $sessionVarName deve ser o nome da variável $_SESSION onde a array gerada pela função será armazenada.
  * $fields deve ser uma array com o nome das colunas que serão retornadas pela query em $query, na mesma ordem que aparecem em $query.
  */
-function runQuery($dbCon, $query, $sessionVarName, $fields){
+function runQuery($dbCon, $query, $fields){
     $queryResult = mysqli_query($dbCon, $query);
     
     $rowsArray = array();
@@ -38,7 +38,7 @@ function runQuery($dbCon, $query, $sessionVarName, $fields){
         }
         array_push($rowsArray, $subArray);
     }
-    $_SESSION[$sessionVarName] = $rowsArray;
+    return $rowsArray;
 }
 
 /* A função listNextProds() é especifica para listar os produtos em N linhas de 6 colunas,
@@ -51,7 +51,7 @@ function runQuery($dbCon, $query, $sessionVarName, $fields){
 function listNextProds($prodsArray, $iniIndex, $range){
     $rowCount = 0;
     echo '<table>';
-    for($i = $iniIndex; $i < ($iniIndex + $range); $i++){
+    for($i = $iniIndex; ($i < ($iniIndex + $range) && $i < count($prodsArray)); $i++){
         $prodXml = simplexml_load_file('produtos/'.$prodsArray[$i]['id_produto'].'/data.xml');
         if($rowCount == 0){
             echo'<tr>';
@@ -79,3 +79,22 @@ function listNextProds($prodsArray, $iniIndex, $range){
     return $iniIndex + $range;
 }
 
+/* A função mkNavLinks() gera os links de navegação entre as paginas geradas pela consulta ao DB.
+ * $prodsAmount é a quanditade de produtos a serem acomodados. Um simples count($arrayDe Produtos)
+ * passado como argumento nos dá a informação adequada.
+ * $prodsPerPage é a quantidade de produtos a serem exibidos por cada pagina.
+ * $indexName é o nome da váriável $_GET que será usada para armazenar o valor do marcador do
+ * primeiro produto de cada página.
+ * $pageName é o nome da própia pagina onde os links de navegação serão gerados.
+ */
+function mkNavLinks($prodsAmount, $prodsPerPAge, $indexName, $pageName){
+    $pages = $prodsAmount;
+    $pageCount = floor($pages / $prodsPerPAge);
+    $lastPage = $pages % $prodsPerPAge;
+    if($lastPage != 0){
+        $pageCount += 1;
+    }
+    for($i = 0; $i < $pageCount; $i++){
+        echo '<a class="navLink" href="'.$pageName.'?'.$indexName.'='.($i*$prodsPerPAge).'&unsetPA=0"> '.($i + 1).' </a> ';
+    }
+}
