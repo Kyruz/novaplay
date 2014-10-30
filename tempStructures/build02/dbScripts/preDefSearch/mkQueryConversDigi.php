@@ -1,0 +1,1 @@
+<?php $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 24', 'nome_prod');

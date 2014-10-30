@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding:0;
+    background-color: #ddd;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+}
+div.pagina{
+    width: 100%;
+}
+div.mainStruc{
+    display: table;
+    margin: 0 auto;
+    background-color: #999;
+}
+div.contentBlock{
+    width: auto;
+    margin: 0 auto;
+    float: left;
+    background-color: #ccc;
+    padding: 5px;
+}
+div.fullLenghtBlock{
+    clear: both;
+    width: auto;
+    background-color: #ccc;
+    padding: 10px;
+}
+div.horBar{
+    clear: both;
+    margin: 0px;
+    width: 100%;
+    min-height: 5px;
+}
+p{
+    margin: .3em;
+}
+p.title{
+    text-align: center;
+    font-size: 20px;
+    margin: .3em;
+}
+p.sysWarning{
+    color: red;
+}
+p.sysMessage{
+    color: blue;
+}
+.geralWarning{
+    color: #ff0000;
+    font-size: 12px;
+}

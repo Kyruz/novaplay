@@ -1,0 +1,1 @@
+<?php $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 34 AND (tags LIKE ("%pendrive%") OR tags LIKE ("%cartao%"))', 'nome_prod');

@@ -1,0 +1,1 @@
+<?php $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 22 AND (tags LIKE ("%home%") OR tags LIKE ("%theater%"))', 'nome_prod');

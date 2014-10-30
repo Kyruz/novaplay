@@ -199,6 +199,17 @@
                                             <td>
                                                 <input type="radio" <?php if(!empty($_GET['categoria'])){if($_GET['categoria']=="33"){echo"checked";}} ?> name="codCategoria" value="33">Outros
                                             </td>
+                                            <tr>
+                                            <td>
+                                                <input type="radio" <?php if(!empty($_GET['categoria'])){if($_GET['categoria']=="34"){echo"checked";}} ?> name="codCategoria" value="34">Armazenamento Dados
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>
                                         </tr>
                                     </table>
                                     <?php
