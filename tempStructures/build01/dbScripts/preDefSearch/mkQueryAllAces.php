@@ -1,1 +1,0 @@
-<?php $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria IN (4, 29, 30, 28, 26, 27) OR (cod_categoria = 33 AND tags LIKE ("%diverso%") AND tags LIKE ("%acessorio%"))', 'nome_prod');

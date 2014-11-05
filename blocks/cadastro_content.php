@@ -3,7 +3,7 @@
     <div class="titleRibbon">
         <h3>CADASTRO: Crie uma conta e aproveite nossos preços!</h3>
     </div>
-    <form action="./dbScripts/cadastrarCliente.php" method="POST" name="cliCadForm" id="cliCadForm" onsubmit="return validarFormCadastro('formWarn')">
+    <form action="./dbScripts/secSession/cadNew.php" method="POST" name="cadNewClient" id="cliCadForm" onsubmit="return validarFormCadastro('formWarn')">
         <div class="dadosAcesso">
             <p style="text-indent: 10px;">Dados de Acesso</p>
             <div class="dadosAcessoBot">
@@ -17,7 +17,7 @@
                     <tr>
                         <td><input type="email" name="email" id="email" onfocus="resetBorder('email')"/></td>
                         <td><input type="email" name="confEmail" id="confEmail" onfocus="resetBorder('confEmail')"/></td>
-                        <td><input type="password" name="senha" id="senha" onfocus="resetBorder('senha')"/></td>
+                        <td><input type="password" name="pass" id="pass" onfocus="resetBorder('pass')"/></td>
                         <td><input type="password" name="confSenha" id="confSenha" onfocus="resetBorder('confSenha')"/></td>
                     </tr>
                 </table>
@@ -104,3 +104,12 @@
         </div>
     </form>
 </div>
+<script>
+//Calls a masking function for these fields.
+jQuery(function($){
+    $("#nasc").mask("99-99-9999");
+    $("#celular").mask("(99) 9999-9999");
+    $("#telFixo").mask("(99) 9999-9999");
+    $("#cep").mask("99999-999");
+});
+</script>

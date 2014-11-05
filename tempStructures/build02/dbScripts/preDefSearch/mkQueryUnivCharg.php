@@ -1,1 +1,0 @@
-<?php $newQuery = mkQuery('produto', 'id_produto, nome_prod, preco', 'cod_categoria = 4 AND tags LIKE ("%universal%")', 'nome_prod');

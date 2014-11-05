@@ -1,3 +1,8 @@
+<?php
+    include_once 'dbScripts/funLib.php';
+    include_once "dbScripts/secSession/funLib.php";
+    sec_session_start();
+?>
 <!DOCTYPE html>
 <!-------------------------------------------------
 |Desenvolvido por Lucas Carvalho Flores           |
@@ -6,10 +11,6 @@
 |Developed by Lucas Carvalho Flores               |
 |Contact: +55 49 9818 1022 eclipsekyruz@gmail.com |
 -------------------------------------------------->
-<?php
-    session_start();
-    include 'dbScripts/funLib.php';
-?>
 <html>
     <head>
         <meta charset="utf-8"/>
@@ -35,6 +36,7 @@
                 });
             });
         </script>
+        <script src="./generalScripts/jQueryInputMask.js"></script>
     </head>
     <body onresize="resizeTop()" onload="setupZoom()">
         <div class="pagina">
