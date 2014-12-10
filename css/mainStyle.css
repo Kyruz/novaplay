@@ -14,6 +14,89 @@ a{
     text-decoration: none;
     color: #000;
 }
+.genericBtn{
+    -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+    background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+    background-color:#007dc1;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #124d77;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    line-height: 1em;
+    font-family:arial;
+    font-size:13px;
+    font-weight: bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #154682;
+    position: relative;
+}
+.genericBtn:hover{
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+    background-color:#0061a7;
+}
+.genericBtn:active{
+    position:relative;
+    top:1px;
+}
+.genericBtn2{
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+    background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+    background-color:#ffffff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color: #1D1D1D !important;
+    font-family:arial;
+    font-size:13px;
+    line-height: 1em;
+    padding:3px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    position: relative;
+}
+.genericBtn2:hover{
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+    background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+    background-color:#f6f6f6;
+}
+.genericBtn2:active{
+    position:relative;
+    top:1px;
+}
 .pagina {
     width: 100%
 }
@@ -23,7 +106,58 @@ a{
     width: auto;
     margin-bottom: 5px;
 }
+/* Clase usada nas barras e separadores de conteúdo por todo o site */
+div.genericBar{
+    clear: both;
+    background: rgb(30, 50, 230);
+    background: -moz-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: -webkit-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: -o-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: -ms-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    background: linear-gradient(179deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
+    border: 2px solid #4141FF;
+}
+/*-- Classe usada por barras separadoras que possúem texto. --*/
+div.labeledBar
+{
+    background-color: #2F4BEC;
+    padding: 6px 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* -- Usado para fundo de certas áreas --*/
+div.fieldArea
+{
+     width: 442px;
+     border: solid 1px #DDDDDD;
+     background-color: #EAF4FF;
+     color: #323232;
+     margin-bottom: 10px;
+}
+/*-- Usado para o label/titulo de fieldArea --*/
+div.FA_label
+{
+    background-color: #B0D4F1;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+/*-- Fim das etruturas gerais. --*/
+
 /* TOPO DA PAGINA */
+/*-- Barra superior, no topo da pagina. --*/
+div.upperBar
+{
+    background-color: #2F4BEC;
+    color: white;
+    font-weight: bold;
+}
+div.upperBar a:link, a:visited, a:active
+{
+    color: white;
+}
 div.topContent
 {
     
@@ -272,18 +406,6 @@ ul.parcelas li{
     top: -17px;
 }
 
-/* Clase usada nas barras separadores de conteúdo por todo o site */
-div.genericBar{
-    clear: both;
-    background: rgb(30, 50, 230);
-    background: -moz-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
-    background: -webkit-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
-    background: -o-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
-    background: -ms-linear-gradient(89deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
-    background: linear-gradient(179deg, rgb(30, 50, 230) 21%, rgb(90, 140, 250) 70%);
-    border: 2px solid #4141FF;
-}
-
 /* Objetos que montam as paginas das catgorias maiores */
  #divContent{
     display: table;
@@ -454,7 +576,7 @@ td.prodTD{
 }
 
 /* STYLES DA PAGINA DE CADASTRO DE CLIENTE */
-#cliCadForm{
+#cadNewClient{
     font-weight: bold;
     color: #282828;
 }
@@ -491,7 +613,7 @@ td.prodTD{
     background-color: #F4F6FF;
     border-top: 1px solid #A0A0A0;
 }
-#cliCadForm input[type="text"], #cliCadForm input[type="email"], #cliCadForm input[type="password"], #cliCadForm select{
+#cadNewClient input[type="text"], #cadNewClient input[type="email"], #cadNewClient input[type="password"], #cadNewClient select{
     width: 200px;
     color: #888;
     padding: 0px 0px 0px 5px;
@@ -509,7 +631,7 @@ td.prodTD{
     clear: both;
     background-color: #A0A0A0;
 }
-#cliCadForm input[type="submit"]{
+#cadNewClient input[type="submit"]{
     margin: 0px 5px;
     padding: 10px 30px 10px 30px;
     background: #66C1E4;
@@ -525,4 +647,128 @@ td.prodTD{
     color: red;
     font-size: 16px;
     text-indent: 0px;
+}
+
+/*-- HOME CONTENT --*/
+div.homeProdExpo
+{
+    
+}
+div.prodExpoCol
+{
+    float: left;
+    width: 270px;
+    padding: 10px;
+    margin: 10px 0px;
+    border: solid 1px #E9E9E9;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}
+div.prodExpoTitleHolder
+{
+    background-color: #2F4BEC;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 5px;
+}
+div.prodExpoHolder
+{
+    margin: 5px 0px;
+    padding: 5px;
+    display: table;
+    border: solid 1px #E9E9E9;
+    background-color: #F4F4F4;
+    
+}
+div.prodExpoHolder:hover
+{
+    background-color: white;
+    border: solid 1px #D7D7D7;
+}
+a:visited.prodExpoHolder
+{
+    color: black;
+}
+div.prodExpoThumb
+{
+    float: left;
+    margin: 0px;
+    width: 75px;
+    height: 75px;
+    background-color: #DFFFFF;
+}
+div.prodExpoTxtHolder
+{
+    float: left;
+    padding: 0px;
+    margin: 0px 0px 0px 5px;
+    width: 177px;
+}
+div.txtTitle
+{
+    height: 15px;
+    font-weight: bold;
+}
+div.txtContent
+{
+    height: 45px;
+    line-height: 14px;
+}
+div.txtBottom
+{
+    height: 15px;
+    font-weight: bold;
+}
+div.QB_BtnHolder
+{
+    float: right;
+    background-color: lightblue;
+    height: 1px;
+    position: relative;
+    top: -7px;
+}
+input.quickBuyBtn
+{
+    -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+    background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+    background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+    background-color:#33bdef;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #057fd0;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:3px 7px;
+    text-decoration:none;
+}
+input.quickBuyBtn:hover
+{
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+    background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+    background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+    background-color:#019ad2;
+}
+input.quickBuyBtn:active
+{
+    position:relative;
+    top:1px;
 }
